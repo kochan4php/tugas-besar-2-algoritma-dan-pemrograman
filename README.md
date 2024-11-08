@@ -69,5 +69,5 @@ List perintah yang tersedia:
 
 Silahkan masukkan perintah: 1
 Masukkan todo: Belajar Node.js
-Todo berhasil ditambahkan`
+Todo berhasil ditambahkan
 ```
