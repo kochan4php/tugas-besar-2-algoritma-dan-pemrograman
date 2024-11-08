@@ -1,0 +1,19 @@
+{
+  "name": "tugas-coding-penerapan-algoritma",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ."
+  },
+  "keywords": [],
+  "author": "Aphrodeo Subarno",
+  "license": "ISC",
+  "dependencies": {
+    "ansis": "^3.3.2"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  }
+}
