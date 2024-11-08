@@ -7,6 +7,10 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
+/**
+ * @description Function for add todo
+ * @returns {void}
+ */
 const addTodo = () => {
   rl.question(cyan("\nMasukkan todo: "), (todo) => {
     todos.push(todo);
@@ -15,6 +19,10 @@ const addTodo = () => {
   });
 };
 
+/**
+ * @description Function for delete todo
+ * @returns {void}
+ */
 const deleteTodo = () => {
   rl.question(cyan("\nMasukkan nomor todo yang akan dihapus: "), (number) => {
     const index = parseInt(number) - 1;
@@ -30,22 +38,38 @@ const deleteTodo = () => {
   });
 };
 
+/**
+ * @description Function for view todos
+ * @returns {void}
+ */
 const viewTodos = () => {
   console.log(cyan("\nDaftar todo hari ini: "));
   todos.forEach((todo, index) => console.log(`${index + 1}. ${todo}`));
   menu();
 };
 
+/**
+ * @description Function for exit from app
+ * @returns {void}
+ */
 const exitApp = () => {
   console.log(yellow("\nTerima kasih telah menggunakan aplikasi ini"));
   rl.close();
 };
 
+/**
+ * @description Function for handle invalid statement
+ * @returns {void}
+ */
 const invalidStatement = () => {
   console.log(red("\nPerintah yang anda masukkan tidak valid!"));
   menu();
 };
 
+/**
+ * @description Function for handle the main menu
+ * @returns {void}
+ */
 const menu = () => {
   const menuOptions = "\nList perintah yang tersedia: \n- Tambah todo (1) \n- Hapus todo (2) \n- Lihat todo (3) \n- Keluar (4) \n\nSilahkan masukkan perintah: ";
   rl.question(menuOptions, (input) => {
@@ -57,5 +81,8 @@ const menu = () => {
   });
 };
 
+/**
+ * @description Run the app
+ */
 console.log(magenta("============== Aplikasi Todo List ============="));
 menu();
