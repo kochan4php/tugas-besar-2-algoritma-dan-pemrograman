@@ -44,7 +44,9 @@ const deleteTodo = () => {
  */
 const viewTodos = () => {
   console.log(cyan("\nDaftar todo hari ini: "));
-  todos.forEach((todo, index) => console.log(`${index + 1}. ${todo}`));
+  for (let i = 0; i < todos.length; i++) {
+    console.log(`${i + 1}. ${todos[i]}`);
+  }
   menu();
 };
 
@@ -74,10 +76,10 @@ const menu = () => {
   const menuOptions = "\nList perintah yang tersedia: \n- Tambah todo (1) \n- Hapus todo (2) \n- Lihat todo (3) \n- Keluar (4) \n\nSilahkan masukkan perintah: ";
   rl.question(menuOptions, (input) => {
     if (input === "1") return addTodo();
-    if (input === "2") return deleteTodo();
-    if (input === "3") return viewTodos();
-    if (input === "4") return exitApp();
-    return invalidStatement();
+    else if (input === "2") return deleteTodo();
+    else if (input === "3") return viewTodos();
+    else if (input === "4") return exitApp();
+    else return invalidStatement();
   });
 };
 
